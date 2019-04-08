@@ -17,17 +17,17 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearrch(int[] array, int e) {
-        int low = 0;
-        int high = array.length - 1;
+        int min = 0;
+        int max = array.length - 1;
         int middle;
-        while (low <= high) {
-            middle = (low + high) / 2;
+        while (min <= max) {
+            middle = (min + max) / 2;
             if (array[middle] == e) {
                 return middle + 1;
             } else if (array[middle] < e) {
-                low = middle + 1;
+                min = middle + 1;
             } else {
-                high = middle - 1;
+                max = middle - 1;
             }
         }
         return -1;
@@ -38,22 +38,22 @@ public class BinarySearch {
      *
      * @param array
      * @param e
-     * @param low
-     * @param high
+     * @param min
+     * @param max
      * @return
      */
-    public static int binarySearchRecursion(int[] array, int e, int low, int high) {
+    public static int binarySearchRecursion(int[] array, int e, int min, int max) {
 
-        int middle = (low + high) / 2;
-        if (low > high) {
+        int middle = (min + max) / 2;
+        if (min > max) {
             return -1;
         }
         if (array[middle] == e) {
             return middle + 1;
         } else if (array[middle] < e) {
-            return binarySearchRecursion(array, e, middle + 1, high);
+            return binarySearchRecursion(array, e, middle + 1, max);
         } else {
-            return binarySearchRecursion(array, e, low, middle - 1);
+            return binarySearchRecursion(array, e, min, middle - 1);
         }
     }
 

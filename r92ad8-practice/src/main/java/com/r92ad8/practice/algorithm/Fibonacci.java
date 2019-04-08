@@ -18,8 +18,7 @@ public class Fibonacci {
 
     /**
      * 斐波那契数列非递归实现
-     * <p>
-     * n不能为0，因为n为0时，arr大小为1，arr[1]越界。
+     * n不能为0，因为n为0时，array大小为1，array[1]越界。
      *
      * @param n
      * @return
