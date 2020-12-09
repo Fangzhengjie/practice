@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.com.r92ad8</groupId>
-    <artifactId>com.r92ad8-parent</artifactId>
+    <groupId>com.r92ad8</groupId>
+    <artifactId>practice-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -22,20 +22,21 @@
         <spring.version>5.2.11.RELEASE</spring.version>
         <lombok.version>1.18.0</lombok.version>
         <joda-time.version>2.10</joda-time.version>
-        <com.r92ad8-core.versoin>1.0.0</com.r92ad8-core.versoin>
+        <practice-core.versoin>1.0.0</practice-core.versoin>
     </properties>
     <modules>
-        <module>com.r92ad8-core</module>
-        <module>com.r92ad8-admin-backend-api</module>
-        <module>com.r92ad8-api</module>
-        <module>com.r92ad8-wx-api</module>
-        <module>com.r92ad8-dubbo-api</module>
-        <module>com.r92ad8-dubbo-api-consumer</module>
-        <module>com.r92ad8-dubbo-api-provider</module>
-        <module>com.r92ad8-practice-demo</module>
-        <module>com.r92ad8-spring-cloud-eureka</module>
-        <module>com.r92ad8-spring-cloud-config</module>
-        <module>com.r92ad8-spring-cloud-zuul</module>
+        <module>practice-core</module>
+        <module>practice-backend-api</module>
+        <module>practice-api</module>
+        <module>practice-wx-api</module>
+        <module>practice-dubbo-api</module>
+        <module>practice-dubbo-api-consumer</module>
+        <module>practice-dubbo-api-provider</module>
+        <module>practice-demo</module>
+        <module>practice-spring-cloud-eureka</module>
+        <module>practice-spring-cloud-config</module>
+        <module>practice-spring-cloud-zuul</module>
+        <module>practice-spring-cloud-gateway</module>
     </modules>
 
 
@@ -138,7 +139,7 @@
                 <version>1.2.5</version>
             </dependency>
 
-            <!--公共组件 -->
+            <!--公共组件  fastjson-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -156,12 +157,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.16</version>
-            </dependency>
             <dependency>
                 <groupId>commons-httpclient</groupId>
                 <artifactId>commons-httpclient</artifactId>
@@ -177,12 +172,6 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>23.0</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>4.0.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
@@ -213,12 +202,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.16</version>
-            </dependency>
             <dependency>
                 <groupId>commons-httpclient</groupId>
                 <artifactId>commons-httpclient</artifactId>
@@ -234,12 +217,6 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>23.0</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>4.0.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
