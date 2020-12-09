@@ -16,7 +16,7 @@ public enum ResponseCodeEnum {
     /**
      * 服务器异常
      */
-    FAILURE(0, "服务器异常"),
+    FAILURE(0, "服务异常"),
 
     ;
     public final int code;

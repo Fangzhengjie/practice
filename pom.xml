@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.r92ad8</groupId>
-    <artifactId>r92ad8-parent</artifactId>
+    <groupId>com.com.r92ad8</groupId>
+    <artifactId>com.r92ad8-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -13,30 +13,29 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-
-        <!-- -->
         <common.lang3.version>3.4</common.lang3.version>
         <pagehelper.version>4.1.1</pagehelper.version>
         <fastjson.version>1.2.33</fastjson.version>
         <swagger2-version>2.6.1</swagger2-version>
         <maven.test.skip>true</maven.test.skip>
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
+        <spring.version>5.2.11.RELEASE</spring.version>
         <lombok.version>1.18.0</lombok.version>
         <joda-time.version>2.10</joda-time.version>
-        <r92ad8-core.versoin>1.0.0</r92ad8-core.versoin>
+        <com.r92ad8-core.versoin>1.0.0</com.r92ad8-core.versoin>
     </properties>
     <modules>
-        <module>r92ad8-core</module>
-        <module>r92ad8-admin-api</module>
-        <module>r92ad8-api</module>
-        <module>r92ad8-wx-api</module>
-        <module>r92ad8-dubbo-user-api</module>
-        <module>r92ad8-dubbo-user-api-consumer</module>
-        <module>r92ad8-dubbo-user-api-provider</module>
-        <module>r92ad8-practice</module>
-        <module>r92ad8-spring-cloud-eureka</module>
-        <module>r92ad8-spring-cloud-config</module>
-        <module>r92ad8-spring-cloud-zuul</module>
+        <module>com.r92ad8-core</module>
+        <module>com.r92ad8-admin-backend-api</module>
+        <module>com.r92ad8-api</module>
+        <module>com.r92ad8-wx-api</module>
+        <module>com.r92ad8-dubbo-api</module>
+        <module>com.r92ad8-dubbo-api-consumer</module>
+        <module>com.r92ad8-dubbo-api-provider</module>
+        <module>com.r92ad8-practice-demo</module>
+        <module>com.r92ad8-spring-cloud-eureka</module>
+        <module>com.r92ad8-spring-cloud-config</module>
+        <module>com.r92ad8-spring-cloud-zuul</module>
     </modules>
 
 

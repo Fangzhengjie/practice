@@ -27,7 +27,7 @@ public class ThreadPoolConstant {
     /**
      * 用户模块线程前缀
      */
-    public static final String THREAD_NAME_PREFIX_USER = "r92ad8-admin-user-async";
+    public static final String THREAD_NAME_PREFIX_USER = "com.r92ad8-admin-user-async";
 
 
 }

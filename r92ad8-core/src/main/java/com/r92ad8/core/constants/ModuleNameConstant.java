@@ -5,5 +5,5 @@ package com.r92ad8.core.constants;
  * @date 2019-01-15
  */
 public class ModuleNameConstant {
-    public static final String EAST_WIND_ADMIN = "r92ad8-admin";
+    public static final String EAST_WIND_ADMIN = "com.r92ad8-admin";
 }
