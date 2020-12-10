@@ -1,4 +1,4 @@
-package com.r92ad8.gateway;
+package com.r92ad8.practice.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

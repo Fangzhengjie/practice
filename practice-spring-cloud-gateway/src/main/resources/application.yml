@@ -18,15 +18,15 @@ spring:
           #       max-life-time: 45000 #最大连接时间
           acquire-timeout: 15000 #返回时间
           max-idle-time: 10000 #最大空闲时间
-      routes: #路由配置
-        - id: user-api #路由id，需要全局统一，建议使用对应的spring.application.name
-          uri: lb://user-api   #路由到对应服务的地址
-          predicates:
-            - Path= /api/user/**/*   #断言，匹配规则，ant匹配
-          filters:
-            - name: FallbackHeaders
-              args:
-                executionExceptionTypeHeaderName: Test-Header
+#      routes: #路由配置
+#        - id: user-api #路由id，需要全局统一，建议使用对应的spring.application.name
+#          uri: lb://user-api   #路由到对应服务的地址
+#          predicates:
+#            - Path= /api/user/**/*   #断言，匹配规则，ant匹配
+#          filters:
+#            - name: FallbackHeaders
+#              args:
+#                executionExceptionTypeHeaderName: Test-Header
   redis: #redis配置
     database: 6 # Redis默认情况下有16个分片，这里配置具体使用的分片，默认是0
     host: 127.0.0.1   # Redis服务器地址
@@ -47,9 +47,12 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true #当微服务有使用IP进行注册时，优先使用IP进行访问
+    appname: practice-gateway
   client:
     service-url:
-      defaultZone: http://192.168.2.55.100:31000/eureka/,http://10.2.55.100:32000/eureka/
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: false
+    fetch-registry: false
 #日志级别
 logging:
   level:

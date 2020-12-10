@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 
 /**
  * Bean 属性赋值工具类
+ *
  * @author Fangzhengjie
  * @date 2020-12-09
  */
@@ -46,8 +47,6 @@ public class BeanUtil extends BeanUtils {
         }
         return list;
     }
-
-
 
 
     /**

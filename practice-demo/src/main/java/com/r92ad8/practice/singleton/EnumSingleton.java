@@ -1,6 +1,6 @@
 package com.r92ad8.practice.singleton;
 
-public enum  EnumSingleton {
+public enum EnumSingleton {
     INSTANCE;
 
     private String name;

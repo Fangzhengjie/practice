@@ -21,7 +21,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/add")
-    public void addUser(@RequestParam("userName") String userName, @RequestParam("password")String password) {
+    public void addUser(@RequestParam("userName") String userName, @RequestParam("password") String password) {
         userService.addUser(UserDTO.builder().userName(userName).password(password).build());
     }
 }
