@@ -28,7 +28,7 @@ public class NettyServer {
 
     @PostConstruct
     public void init() {
-        nettyServer = this;
+        nettyServer = getInstance();
     }
 
 
@@ -49,7 +49,7 @@ public class NettyServer {
             log.info("Netty服务启动,监听端口:{}", socketAddress.getPort());
             channelFuture.channel().closeFuture().sync();
         } catch (InterruptedException interruptedException) {
-            interruptedException.printStackTrace();
+            log.error("InterruptedException Exception", interruptedException);
         } finally {
             //关闭工作线程组
             workGroup.shutdownGracefully();
