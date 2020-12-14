@@ -1,4 +1,4 @@
-package com.r92ad8.eureka;
+package com.r92ad8.practice.eureka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
