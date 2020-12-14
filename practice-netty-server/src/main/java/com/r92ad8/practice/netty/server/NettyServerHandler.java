@@ -8,45 +8,46 @@ import lombok.extern.slf4j.Slf4j;
 public class NettyServerHandler implements ChannelInboundHandler {
 
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel registered......");
+        log.info("channelRegistered,ctx:{}", ctx);
     }
 
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel unregistered......");
+        log.info("channelUnregistered,ctx:{}", ctx);
     }
 
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel active......");
+        log.info("channelActive,ctx:{}", ctx);
     }
 
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel inactive......");
+        log.info("channelInactive,ctx:{}", ctx);
     }
 
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.info("channel read......");
+        log.info("channelRead,ctx:{},msg:{}", ctx, msg);
     }
 
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel read complete......");
+        log.info("channelReadComplete,ctx:{}", ctx);
     }
 
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-        log.info("user event triggered......");
+        log.info("userEventTriggered,ctx:{},evt:{}", ctx, evt);
     }
 
     public void channelWritabilityChanged(ChannelHandlerContext ctx) throws Exception {
-        log.info("channel writability changed......");
+        log.info("channelWritabilityChanged,ctx:{}", ctx);
     }
+
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        log.info("exception caught......");
+        log.info("exceptionCaught,ctx:{},cause:{}", ctx, cause);
     }
 
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
-        log.info("handler added......");
+        log.info("handlerAdded,ctx:{}", ctx);
     }
 
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        log.info("handler removed......");
+        log.info("handlerRemoved,ctx:{}", ctx);
     }
 }
