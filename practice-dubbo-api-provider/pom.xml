@@ -11,7 +11,7 @@
     <groupId>com.r92ad8</groupId>
     <artifactId>practice-dubbo-api-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>practice-dubbo-provider</name>
+    <name>practice-dubbo-api-provider</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
