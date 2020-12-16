@@ -33,6 +33,7 @@
         <module>practice-dubbo-api-consumer</module>
         <module>practice-dubbo-api-provider</module>
         <module>practice-demo</module>
+        <module>practice-prometheus-demo</module>
         <module>practice-spring-cloud-eureka</module>
         <module>practice-spring-cloud-config</module>
         <module>practice-spring-cloud-zuul</module>
