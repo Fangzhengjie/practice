@@ -24,6 +24,6 @@ public class PracticeApplication implements CommandLineRunner {
          */
         String host = "127.0.0.1";
         int port = 8090;
-        new BootNettyClient().connect(host, 8090);
+        new BootNettyClient().connect(host, port);
     }
 }

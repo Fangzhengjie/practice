@@ -1,0 +1,21 @@
+server:
+    port: 8090
+
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        password:
+        username: 'sa'
+        url: jdbc:h2:mem:test
+        schema: classpath:db/schema.sql
+        data: classpath:db/data.sql
+        tomcat:
+            max-wait: 5000
+            test-on-borrow: true
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+            settings:
+                web-allow-others: true
+                trace: true

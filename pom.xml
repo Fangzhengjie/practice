@@ -39,6 +39,7 @@
         <module>practice-spring-cloud-zuul</module>
         <module>practice-spring-cloud-gateway</module>
         <module>practice-netty-server</module>
+        <module>practice-spring-mybatis-demo</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>
