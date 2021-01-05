@@ -1,13 +1,15 @@
 package com.r92ad8.practice.mapper;
 
 
-import com.r92ad8.practice.SpringMybatisDemoApplicationTest;
+import com.r92ad8.practice.BaseTest;
 import com.r92ad8.practice.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserMapperTest extends SpringMybatisDemoApplicationTest {
+
+public class UserMapperTest extends BaseTest{
+
     @Autowired
     private UserMapper userMapper;
 
