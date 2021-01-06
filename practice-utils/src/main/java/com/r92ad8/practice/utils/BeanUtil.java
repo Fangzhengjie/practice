@@ -1,4 +1,4 @@
-package com.r92ad8.core.utils;
+package com.r92ad8.practice.utils;
 
 import org.springframework.beans.BeanUtils;
 

@@ -26,6 +26,7 @@
     </properties>
     <modules>
         <module>practice-core</module>
+        <module>practice-utils</module>
         <module>practice-backend-api</module>
         <module>practice-api</module>
         <module>practice-wx-api</module>
@@ -40,6 +41,7 @@
         <module>practice-spring-cloud-gateway</module>
         <module>practice-netty-server</module>
         <module>practice-spring-mybatis-demo</module>
+        <module>practice-multi-thread-demo</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>

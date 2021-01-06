@@ -1,4 +1,4 @@
-package com.r92ad8.core.utils;
+package com.r92ad8.practice.utils;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
@@ -9,11 +9,11 @@ import java.io.*;
 import java.util.regex.Pattern;
 
 
-public class CodeStatisticsUtils {
+public class CodeUtil {
 
     public static void main(String[] args) throws IOException {
-        File file = new File("D:\\workspace\\cloudwalk-cbb-backend\\cloudwalk-cbb-backend-biz\\src\\main\\java\\cn\\cloudwalk\\cbb\\backend\\biz\\utils");//需要统计行数的文件夹路径
-        OutputStream outputStream = new FileOutputStream("D:\\中文统计.xls");
+        File file = new File(System.getProperty("user.dir"));//需要统计行数的文件夹路径
+        OutputStream outputStream = new FileOutputStream("代码中的中文统计.xls");
         Workbook workbook = new HSSFWorkbook();
         //调用递归方法统计中文
         traverseFiles(file, workbook);

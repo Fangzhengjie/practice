@@ -1,4 +1,4 @@
-package com.r92ad8.core.utils;
+package com.r92ad8.practice.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
