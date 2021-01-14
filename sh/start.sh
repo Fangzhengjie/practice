@@ -1,5 +1,5 @@
 #!/bin/sh
-   APP_NAME=ruoyi-admin.jar
+   APP_NAME= xxx
    #使用说明，用来提示输入参数
    usage() {
 		   echo "Usage: sh demo.sh [start|stop|restart|status]"

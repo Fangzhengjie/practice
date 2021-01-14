@@ -29,6 +29,7 @@
         <module>practice-utils</module>
         <module>practice-backend-api</module>
         <module>practice-api</module>
+        <module>practice-auth-oauth-api</module>
         <module>practice-wx-api</module>
         <module>practice-dubbo-api</module>
         <module>practice-dubbo-api-consumer</module>
@@ -76,4 +77,53 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>aliyun-repos</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <maven.env>development</maven.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <maven.env>test</maven.env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>pre</id>
+            <properties>
+                <maven.env>pre</maven.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <maven.env>prod</maven.env>
+            </properties>
+        </profile>
+    </profiles>
+
+    <developers>
+
+        <developer>
+            <id>00</id>
+            <name>方正杰</name>
+            <email>175732964@qq.com</email>
+        </developer>
+    </developers>
 </project>
