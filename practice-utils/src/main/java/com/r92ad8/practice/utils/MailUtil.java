@@ -6,14 +6,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 
 @Component
@@ -135,7 +134,7 @@ public class MailUtil {
      * @param cc      抄送人
      */
     @SneakyThrows
-    public static void sendHtmlMail(String from, String[] to, String[] cc, String subject, String content) {
+    public static void sendNormalHtmlMail(String from, String[] to, String[] cc, String subject, String content) {
         //附件处理需要进行二进制传输
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, StandardCharsets.UTF_8.displayName());
@@ -158,6 +157,81 @@ public class MailUtil {
     }
 
     /**
+     * 发送Html邮件,内置图片
+     *
+     * @param from    发件人
+     * @param subject 邮件主题，即邮件的邮件名称
+     * @param content 邮件内容
+     * @param to      收件人
+     * @param cc      抄送人
+     */
+    @SneakyThrows
+    public static void sendHtmlMailWithInLine(String from, String[] to, String[] cc, String subject, String content, File... picture) {
+        //附件处理需要进行二进制传输
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, StandardCharsets.UTF_8.displayName());
+        //设置必要的邮件元素
+        //设置发件人
+        mimeMessageHelper.setFrom(from);
+        //设置邮件的主题
+        mimeMessageHelper.setSubject(subject);
+        //设置邮件的内容，区别是否是HTML邮件
+        mimeMessageHelper.setText(content, true);
+        //设置邮件的收件人
+        mimeMessageHelper.setTo(to);
+        //设置非必要的邮件元素，在使用helper进行封装时，这些数据都不能够为空
+        if (ArrayUtils.isNotEmpty(cc)) {
+            //设置邮件的抄送人
+            mimeMessageHelper.setCc(cc);
+        }
+        if (ArrayUtils.isNotEmpty(picture)) {
+            for (int i = 0; i < picture.length; i++) {
+                File file = picture[i];
+                mimeMessageHelper.addInline(String.valueOf(i),file);
+            }
+        }
+        //发送
+        mailSender.send(mimeMessage);
+    }
+    /**
+     * 发送Html邮件,内置图片
+     *
+     * @param from    发件人
+     * @param subject 邮件主题，即邮件的邮件名称
+     * @param content 邮件内容
+     * @param to      收件人
+     * @param cc      抄送人
+     */
+    @SneakyThrows
+    public static void sendHtmlMailWithAttachment(String from, String[] to, String[] cc, String subject, String content, File... picture) {
+        //附件处理需要进行二进制传输
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true, StandardCharsets.UTF_8.displayName());
+        //设置必要的邮件元素
+        //设置发件人
+        mimeMessageHelper.setFrom(from);
+        //设置邮件的主题
+        mimeMessageHelper.setSubject(subject);
+        //设置邮件的内容，区别是否是HTML邮件
+        mimeMessageHelper.setText(content, true);
+        //设置邮件的收件人
+        mimeMessageHelper.setTo(to);
+        //设置非必要的邮件元素，在使用helper进行封装时，这些数据都不能够为空
+        if (ArrayUtils.isNotEmpty(cc)) {
+            //设置邮件的抄送人
+            mimeMessageHelper.setCc(cc);
+        }
+        if (ArrayUtils.isNotEmpty(picture)) {
+            for (int i = 0; i < picture.length; i++) {
+                File file = picture[i];
+                mimeMessageHelper.addAttachment(file.getName(),file );
+            }
+        }
+        //发送
+        mailSender.send(mimeMessage);
+    }
+
+    /**
      * 发送Html邮件
      *
      * @param from    发件人
@@ -166,13 +240,13 @@ public class MailUtil {
      * @param subject
      * @param content
      */
-    public static void sendHtmlMail(String from, String to[], String cc, String subject, String content) {
+    public static void sendNormalHtmlMail(String from, String to[], String cc, String subject, String content) {
         //抄送人cc
         String[] carbonCopyRecipients = {};
         if (StringUtils.isNotBlank(cc)) {
             carbonCopyRecipients = cc.split(JoinerConstant.COMMA);
         }
-        sendHtmlMail(from, to, carbonCopyRecipients, subject, content);
+        sendNormalHtmlMail(from, to, carbonCopyRecipients, subject, content);
     }
 
     /**
@@ -184,7 +258,7 @@ public class MailUtil {
      * @param subject 邮件主题
      * @param content 邮件内容
      */
-    public static void sendHtmlMail(String from, String to, String cc, String subject, String content) {
+    public static void sendNormalHtmlMail(String from, String to, String cc, String subject, String content) {
         //发送人
         String[] sendTo = {};
         if (StringUtils.isNotBlank(to)) {
@@ -195,7 +269,7 @@ public class MailUtil {
         if (StringUtils.isNotBlank(cc)) {
             carbonCopyRecipients = cc.split(JoinerConstant.COMMA);
         }
-        sendHtmlMail(from, sendTo, carbonCopyRecipients, subject, content);
+        sendNormalHtmlMail(from, sendTo, carbonCopyRecipients, subject, content);
     }
 
     /**
@@ -207,13 +281,13 @@ public class MailUtil {
      * @param subject 邮件主题
      * @param content 邮件内容
      */
-    public static void sendHtmlMail(String from, String to, String[] cc, String subject, String content) {
+    public static void sendNormalHtmlMail(String from, String to, String[] cc, String subject, String content) {
         //发送人
         String[] sendTo = {};
         if (StringUtils.isNotBlank(to)) {
             sendTo = to.split(JoinerConstant.COMMA);
         }
-        sendHtmlMail(from, sendTo, cc, subject, content);
+        sendNormalHtmlMail(from, sendTo, cc, subject, content);
     }
 
 
