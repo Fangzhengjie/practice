@@ -9,7 +9,7 @@ public class TestThread extends Thread{
         TestThread thread4 =new TestThread();
         thread1.start();
         thread2.start();
-        thread4.start();
+        thread3.start();
         thread4.start();
     }
 }
