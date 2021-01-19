@@ -1,35 +1,36 @@
 package com.r92ad8.practice.multithread.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class CountDownLatchTest {
 
-    public static void main(String[] args) {
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        new Thread(() -> {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
-            System.out.println(Thread.currentThread().getName() + " execute.....");
-            countDownLatch.countDown();
-        }).start();
-        new Thread(() -> {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
-            System.out.println(Thread.currentThread().getName() + " execute.....");
-            countDownLatch.countDown();
-        }).start();
-        try {
-            countDownLatch.await(1000, TimeUnit.MILLISECONDS);
-            System.out.println(Thread.currentThread().getName() + "execute end");
-        } catch (InterruptedException interruptedException) {
-            interruptedException.printStackTrace();
+    // 十名选手
+    private static final ExecutorService exec = Executors.newFixedThreadPool(10);
+
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch begin = new CountDownLatch(1);
+        CountDownLatch end = new CountDownLatch(10);
+        for (int i = 0; i < 10; i++) {
+            final int no = i + 1;
+            exec.submit(() -> {
+                try {
+                    begin.await();
+                    Thread.sleep((long) (Math.random() * 10000));
+                    System.out.println( no + "号到达终点");
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                } finally {
+                    end.countDown();
+                }
+            });
         }
+        System.out.println("比赛开始");
+        begin.countDown(); // begin减一，开始游戏
+        end.await();// 等待end变为0，即所有选手到达终点
+        System.out.println("比赛结束");
+        exec.shutdown();
     }
 }
