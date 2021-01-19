@@ -1,8 +1,5 @@
 package com.r92ad8.practice.multithread.cyclicbarrier;
 
-import com.r92ad8.practice.multithread.threadpool.FixedThreadPoolTest;
-import org.apache.catalina.Executor;
-
 import java.util.concurrent.*;
 
 public class CyclicBarrierTest {

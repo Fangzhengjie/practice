@@ -43,6 +43,7 @@
         <module>practice-netty-server</module>
         <module>practice-spring-mybatis-demo</module>
         <module>practice-multi-thread-demo</module>
+        <module>practice-lock-demo</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>

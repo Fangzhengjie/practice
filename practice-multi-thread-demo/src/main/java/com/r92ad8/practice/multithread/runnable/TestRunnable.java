@@ -1,7 +1,5 @@
 package com.r92ad8.practice.multithread.runnable;
 
-import java.util.concurrent.Executors;
-
 public class TestRunnable implements Runnable{
     @Override
     public void run() {

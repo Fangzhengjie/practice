@@ -1,6 +1,5 @@
 package com.r92ad8.practice.multithread.timer;
 
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
