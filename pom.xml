@@ -27,20 +27,17 @@
     <modules>
         <module>practice-core</module>
         <module>practice-utils</module>
-        <module>practice-backend-api</module>
-        <module>practice-api</module>
-        <module>practice-auth-oauth-api</module>
         <module>practice-wx-api</module>
+        <module>practice-auth-oauth-api</module>
         <module>practice-dubbo-api</module>
-        <module>practice-dubbo-api-consumer</module>
-        <module>practice-dubbo-api-provider</module>
+        <module>practice-dubbo-api-consumer-demo</module>
+        <module>practice-dubbo-api-provider-demo</module>
         <module>practice-demo</module>
         <module>practice-prometheus-demo</module>
         <module>practice-spring-cloud-eureka</module>
-        <module>practice-spring-cloud-config</module>
-        <module>practice-spring-cloud-zuul</module>
         <module>practice-spring-cloud-gateway</module>
         <module>practice-netty-server</module>
+        <module>practice-spring-datasource-demo</module>
         <module>practice-spring-mybatis-demo</module>
         <module>practice-multi-thread-demo</module>
         <module>practice-lock-demo</module>

@@ -19,7 +19,7 @@
 Centos6和7要安装的常用企业运维基础工具包
 命令：
 ````
-yum install tree nmap dos2unix lrzsz nc lsof wget tcpdump htop iftop iotop sysstat nethogs -y
+yum install bash-completion wget net-tools tree nmap dos2unix lrzsz nc lsof wget tcpdump htop iftop iotop sysstat nethogs -y
 ````
 tree：tree以树形结构显示文件和目录
 
