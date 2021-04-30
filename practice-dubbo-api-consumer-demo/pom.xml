@@ -11,7 +11,7 @@
     <groupId>com.r92ad8</groupId>
     <artifactId>practice-dubbo-api-consumer-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>practice-dubbo-api-consumer</name>
+    <name>practice-dubbo-api-consumer-demo</name>
     <description></description>
 
     <properties>
