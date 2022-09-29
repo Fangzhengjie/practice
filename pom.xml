@@ -2,9 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.7</version>
+        <relativePath/>
+    </parent>
     <groupId>com.r92ad8</groupId>
     <artifactId>practice-parent</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -27,21 +33,10 @@
     <modules>
         <module>practice-core</module>
         <module>practice-utils</module>
-        <module>practice-backend-api</module>
-        <module>practice-api</module>
-        <module>practice-wx-api</module>
+        <module>practice-netty-server</module>
         <module>practice-dubbo-api</module>
         <module>practice-dubbo-api-consumer</module>
         <module>practice-dubbo-api-provider</module>
-        <module>practice-demo</module>
-        <module>practice-prometheus-demo</module>
-        <module>practice-spring-cloud-eureka</module>
-        <module>practice-spring-cloud-config</module>
-        <module>practice-spring-cloud-zuul</module>
-        <module>practice-spring-cloud-gateway</module>
-        <module>practice-netty-server</module>
-        <module>practice-spring-mybatis-demo</module>
-        <module>practice-multi-thread-demo</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>

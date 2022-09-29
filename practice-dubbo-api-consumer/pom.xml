@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.r92ad8</groupId>
-    <artifactId>practice-dubbo-consumer</artifactId>
+    <artifactId>practice-dubbo-api-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>practice-dubbo-api-consumer</name>
     <description></description>

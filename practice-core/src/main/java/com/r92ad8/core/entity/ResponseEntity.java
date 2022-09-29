@@ -9,7 +9,7 @@ import com.r92ad8.core.enums.ResponseCodeEnum;
  * @author fangzhengjie
  * @date 2019-01-01
  */
-public class ResponseEntity {
+public class ResponseEntity<T> {
 
     /**
      * 状态码
@@ -24,7 +24,7 @@ public class ResponseEntity {
     /**
      * 返回数据
      */
-    private Object data;
+    private <T> T data;
 
 
     private ResponseEntity(int code, String msg, Object data) {
